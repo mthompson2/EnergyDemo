@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkThompson.Energy.Lux.Inv
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnergyConsole", "EnergyConsole\EnergyConsole.csproj", "{2AA49368-EA93-4A21-8F42-2F7F2FB364FE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnergyWeb", "EnergyWeb\EnergyWeb.csproj", "{B2622E51-CAB0-4331-BB63-8C4984486A73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkThompson.Energy.Octopus", "MarkThompson.Energy.Octopus\MarkThompson.Energy.Octopus.csproj", "{810716EE-8B50-4DFD-B349-7C75E337B613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarkThompson.Energy.Octopus", "MarkThompson.Energy.Octopus\MarkThompson.Energy.Octopus.csproj", "{810716EE-8B50-4DFD-B349-7C75E337B613}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnergyWebAppGcp", "EnergyWebAppGcp\EnergyWebAppGcp.csproj", "{DF1B6B22-DD40-4B86-A239-CA712EA359F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{2AA49368-EA93-4A21-8F42-2F7F2FB364FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AA49368-EA93-4A21-8F42-2F7F2FB364FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AA49368-EA93-4A21-8F42-2F7F2FB364FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2622E51-CAB0-4331-BB63-8C4984486A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2622E51-CAB0-4331-BB63-8C4984486A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2622E51-CAB0-4331-BB63-8C4984486A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2622E51-CAB0-4331-BB63-8C4984486A73}.Release|Any CPU.Build.0 = Release|Any CPU
 		{810716EE-8B50-4DFD-B349-7C75E337B613}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{810716EE-8B50-4DFD-B349-7C75E337B613}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{810716EE-8B50-4DFD-B349-7C75E337B613}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{810716EE-8B50-4DFD-B349-7C75E337B613}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF1B6B22-DD40-4B86-A239-CA712EA359F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF1B6B22-DD40-4B86-A239-CA712EA359F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF1B6B22-DD40-4B86-A239-CA712EA359F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF1B6B22-DD40-4B86-A239-CA712EA359F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
