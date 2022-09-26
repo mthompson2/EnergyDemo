@@ -1,8 +1,20 @@
-﻿@{
+﻿@model EnergyWebAppGcp.Models.EnergyPriceModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<table> 
+
+    @foreach(MarkThompson.Energy.Octopus.CommsObjects.AgilePricing ap in Model.Prices)
+    {
+        <tr><td>@ap.valid_from</td> <td>@ap.value_exc_vat p</td><td>
+                <form method="post" action="/home/SetTime">
+                    <input type="hidden" name="hours" " value="@ap.valid_from.Hour" /><input type="hidden" name="minutes" " value="@ap.valid_from.Minute" />
+                    <input type="submit" text="Set Time" value="Sell at this time"/>
+        </form>
+        </td>    </tr>
+
+    }
+</table>

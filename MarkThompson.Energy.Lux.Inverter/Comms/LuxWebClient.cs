@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarkThompson.Energy.Lux.Inverter.Comms
 {
-    public class OctopusEnergyWebClient
+    public class LuxWebClient
     {
         public static WebProxy Proxy { get; set; }
 
@@ -19,7 +19,7 @@ namespace MarkThompson.Energy.Lux.Inverter.Comms
             request.Method = "POST";
             request.Accept = "application/json";
 
-            request.UserAgent = "Test Code - github.com/mthompson2/EnergyDemo";
+            request.UserAgent = "TestCode";
 
 
             // grab te response and print it out to the console along with the status code
@@ -42,13 +42,13 @@ namespace MarkThompson.Energy.Lux.Inverter.Comms
 
             request.Method = method;
             request.Accept = "application/json, text/javascript, */*; q=0.01";
-            request.UserAgent = "Test Code - github.com/mthompson2/EnergyDemo";
+            request.UserAgent = "TestCode";
             request.CookieContainer = new CookieContainer();
             request.CookieContainer.Add(new Cookie() { Name = "JSESSIONID", Value = System.Web.HttpUtility.UrlEncode(session), Domain = target.Host });
 
             if (payload != null)
             {
-                request.ContentType = "application/x-www-form-urlencoded";
+                request.ContentType = "application/x-www-form-urlencoded; charset=UTF-8\t";
                 // turn our request string into a byte stream
                 byte[] postBytes = Encoding.UTF8.GetBytes(payload);
 

@@ -12,6 +12,9 @@ namespace MarkThompson.Energy.Lux.Inverter
 
         public string Password { get; set; }
 
+
+        public string InverterSerialNumber { get; set; }
+
         public static LuxConfiguration Load()
         {
             string str = System.IO.File.ReadAllText("luxconfig.txt");

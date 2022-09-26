@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MarkThompson.Energy.Octopus.Comms
 {
-    internal class OctopusEnergyWebClient
+    public class OctopusEnergyWebClient
     {
 
         public static WebProxy Proxy { get; set; }

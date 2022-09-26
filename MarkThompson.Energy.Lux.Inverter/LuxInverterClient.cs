@@ -14,12 +14,12 @@ namespace MarkThompson.Energy.Lux.Inverter
 
         public void Authenticate(string username, string password)
         {
-             SessionId = Comms.OctopusEnergyWebClient.GetJavaSessionId();
+             SessionId = Comms.LuxWebClient.GetJavaSessionId();
             string payload  = string.Format("account={0}&password={1}", username, password);
 
             string url = "https://server.luxpowertek.com/WManage/web/login";
 
-            Comms.OctopusEnergyWebClient.DoWebRequest(SessionId, url, "POST", payload);
+            Comms.LuxWebClient.DoWebRequest(SessionId, url, "POST", payload);
 
         }
 
@@ -27,7 +27,7 @@ namespace MarkThompson.Energy.Lux.Inverter
         {
             string url = "https://server.luxpowertek.com/WManage/web/config/plant/list/viewer";
 
-            string results = Comms.OctopusEnergyWebClient.DoWebRequest(SessionId, url, "POST");
+            string results = Comms.LuxWebClient.DoWebRequest(SessionId, url, "POST");
 
             Response<PlantInfo>  ret = JsonConvert.DeserializeObject<Response<PlantInfo>>(results);
             return ret.Rows;
@@ -41,7 +41,7 @@ namespace MarkThompson.Energy.Lux.Inverter
             string payload = string.Format($"page=1&rows=200&plantId={plantId}"); // Return a maximum of 200 inverters
 
 
-            string results = Comms.OctopusEnergyWebClient.DoWebRequest(SessionId, url, "POST", payload);
+            string results = Comms.LuxWebClient.DoWebRequest(SessionId, url, "POST", payload);
             Response<InverterInfo> ret = JsonConvert.DeserializeObject<Response<InverterInfo>>(results);
             return ret.Rows;
         }
@@ -54,7 +54,7 @@ namespace MarkThompson.Energy.Lux.Inverter
             string payload = string.Format("serialNum={0}", inverterSerialNUmber);
 
 
-            string results = Comms.OctopusEnergyWebClient.DoWebRequest(SessionId, url, "POST", payload);
+            string results = Comms.LuxWebClient.DoWebRequest(SessionId, url, "POST", payload);
             InverterRuntime ret = JsonConvert.DeserializeObject<InverterRuntime>(results);
             return ret;
         }
@@ -66,7 +66,7 @@ namespace MarkThompson.Energy.Lux.Inverter
             string payload = string.Format("serialNum={0}&dateText={1}-{2}-{3}", inverterSerialNUmber, dt.Year, dt.Month, dt.Day);
 
 
-            string results = Comms.OctopusEnergyWebClient.DoWebRequest(SessionId, url, "POST", payload);
+            string results = Comms.LuxWebClient.DoWebRequest(SessionId, url, "POST", payload);
             DayUsageStatisticCollection ret = JsonConvert.DeserializeObject<DayUsageStatisticCollection>(results);
             return ret.data;
         }
@@ -77,7 +77,7 @@ namespace MarkThompson.Energy.Lux.Inverter
             string payload = string.Format("inverterSn={0}&timeParam=HOLD_FORCED_DISCHARGE_START_TIME&hour={1}&minute={2}&clientType=WEB&remoteSetType=NORMAL", inverterSerialNUmber, hours, minutes);
 
 
-            string results = Comms.OctopusEnergyWebClient.DoWebRequest(SessionId, url, "POST", payload);
+            string results = Comms.LuxWebClient.DoWebRequest(SessionId, url, "POST", payload);
             OperationResult ret = JsonConvert.DeserializeObject<OperationResult>(results);
             return ret.Result;
         }
